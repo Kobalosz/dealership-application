@@ -88,7 +88,7 @@ public class DealershipFileManager
 
             for(Vehicle vehicle : dealership.getAllVehicles())
             {
-                writer.printf("%d|%d|%s|%s|%s|%s|%d|%f.2\n",
+                writer.printf("%d|%d|%s|%s|%s|%s|%d|%.2f\n",
                         vehicle.getVin(),
                         vehicle.getYear(),
                         vehicle.getMake(),
