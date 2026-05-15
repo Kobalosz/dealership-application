@@ -103,6 +103,22 @@ public class DealershipApplication
 
     private void addVehicle()
     {
-        UserInterface.displayMessage("build add vehicle logic");
+//        1) Collect the Vehicle info from the user
+        UserInterface.displayMessage("========== Please input vehicle info ===========");
+
+//        2) Parse the information provided into variables and pass the values into our Constructor
+        int vin =  Integer.parseInt(UserInterface.getUserInput("Please input the vin number: "));
+        int year = Integer.parseInt(UserInterface.getUserInput("Please enter the year: "));
+        String make = UserInterface.getUserInput("Please enter the make: ");
+        String model = UserInterface.getUserInput("Please enter the model: ");
+        String vehicleType = UserInterface.getUserInput("Please enter the vehicle type: ");
+        String color = UserInterface.getUserInput("Please enter the color: ");
+        int odometer = Integer.parseInt(UserInterface.getUserInput("Please enter the odometer number (int): "));
+        double price = Double.parseDouble(UserInterface.getUserInput("Please enter the price: "));
+        Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
+
+//        3) Pass the newly created vehicle to the dealership and save
+        dealership.addVehicleToDealership(vehicle);
+        dealership.saveDealership();
     }
 }

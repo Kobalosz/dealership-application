@@ -107,6 +107,10 @@ public class Dealership
         saveDealership();
     }
 
+    public void addVehicleToDealership(Vehicle vehicle){
+        inventory.add(vehicle);
+    }
+
     public void saveDealership() {
         DealershipFileManager.saveDealership(this);
     }
